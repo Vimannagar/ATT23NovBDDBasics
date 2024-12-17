@@ -23,6 +23,12 @@ public class PlaceOrderSteps {
 	   
 	   System.out.println("The product id value is : "+addToCart.getProductId());
 	}
+	
+	@Then("I verify the id available")
+	public void validateOrderId()
+	{
+		System.out.println("The product id value from scenario 2 is : "+addToCart.getProductId());
+	}
 
 
 }
