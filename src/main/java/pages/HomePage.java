@@ -19,10 +19,10 @@ public class HomePage {
 	@FindBy(xpath = "//*[@id='nav-cart']")
 	private WebElement cartIcon;
 
-	@FindBy(xpath = "//img[@alt='Helmets']/parent::a")
+	@FindBy(xpath = "//img[@alt='BISS']/parent::a")
 	private WebElement dealSection;
-	@FindBy(xpath = "//*[@id='brandsRefinements']//*[text()='Steelbird']")
-	private WebElement helmetBrand;
+	@FindBy(xpath = "//*[@class='a-list-item']//*[text()='Bosch']")
+	private WebElement groceryText;
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -55,9 +55,9 @@ public class HomePage {
 	}
 
 	public boolean helmetSection() {
-		wait.until(ExpectedConditions.visibilityOf(helmetBrand));
+		wait.until(ExpectedConditions.visibilityOf(groceryText));
 
-		boolean isDislaying = helmetBrand.isDisplayed();
+		boolean isDislaying = groceryText.isDisplayed();
 
 		return isDislaying;
 	}

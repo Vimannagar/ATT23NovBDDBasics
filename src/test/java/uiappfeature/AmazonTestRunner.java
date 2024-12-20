@@ -11,7 +11,11 @@ import io.cucumber.testng.CucumberOptions;
 		
 		plugin = {"pretty", "html:target/cucumber-reports/reports.html"},
 		
-		publish = true
+		publish = true,
+		
+//		tags = "@sanity",
+		
+		dryRun = false
 		
 		
 		
