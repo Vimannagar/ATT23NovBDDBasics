@@ -22,6 +22,19 @@ public class ApplicationHooks {
 		DriverFactory df = new DriverFactory();
 		
 		 String browserName = PropReader.readPropData("browser");
+		 
+		 String commandPromptBrowserName = System.getProperty("cliBrowser");
+		 
+		 if(commandPromptBrowserName!=null)
+		 {
+			 browserName = commandPromptBrowserName;
+		 }
+		 
+		 System.out.println("Received browsername from command prompt is "+commandPromptBrowserName);
+		 
+		String envValue = System.getProperty("env");
+		
+		System.out.println("The value of env received from cmd is : "+envValue);
 		
 		 driver = df.initBrowser(browserName);
 		 
@@ -35,12 +48,13 @@ public class ApplicationHooks {
 	boolean isScenarioFailed = scenario.isFailed();// to check if the scenario is passed / failed based on true / false
 		
 	if(isScenarioFailed)
+		
 	{
 		String scenarioName = scenario.getName();
 		
 		String newScenarioName = scenarioName.replaceAll(" ", "_");// replacing all the spaces from the scenario name 
 		
-					TakesScreenshot ts = (TakesScreenshot)driver;
+		TakesScreenshot ts = (TakesScreenshot)driver;
 					
 		byte[] source = ts.getScreenshotAs(OutputType.BYTES);// in cucumber we have to capture the screenshot in terms of byte []
 		
