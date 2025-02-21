@@ -8,9 +8,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
 import qa.DriverFactory;
+import qa.PageFactoryManager;
 
 public class HomePageSteps {
-	HomePage homepage = new HomePage(DriverFactory.getDriver());
+	HomePage homepage;
+	public HomePageSteps()
+	{
+		homepage = PageFactoryManager.getHomePage(DriverFactory.getDriver());
+	}
+
 	
 	@Given("user is at landing page")
 	public void user_is_at_landing_page() {

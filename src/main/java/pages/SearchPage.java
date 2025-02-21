@@ -9,10 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SearchPage {
+public class SearchPage extends BasePage {
 
-	WebDriver driver;
-	WebDriverWait wait;
+
+	
 	@FindBy(xpath = "//*[@id='twotabsearchtextbox']")
 	WebElement textField;
 	
@@ -24,15 +24,16 @@ public class SearchPage {
 	
 	public SearchPage(WebDriver driver)
 	{
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		wait = new WebDriverWait(driver, Duration.ofSeconds(60));	
+		
 	}
 	
 	public void searchingProduct(String textToBeSearched)
 	{
-		textField.sendKeys(textToBeSearched);
-		searchIcon.click();
+		clearAndSendKeys(textField, textToBeSearched);
+		click(searchIcon);
 		
 	}
 	
