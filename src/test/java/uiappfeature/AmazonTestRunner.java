@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 		
-		features = {"src\\test\\resources\\uiappfeature"},
+		features = {"src//test//resources//uiappfeature"},
 		
 		glue = {"uiappfeature"},
 		
@@ -13,8 +13,6 @@ import io.cucumber.testng.CucumberOptions;
 				"json:target/cucumber-report.json"},
 		
 		publish = true,
-		
-		tags = "@sanity",
 		
 		dryRun = false
 		

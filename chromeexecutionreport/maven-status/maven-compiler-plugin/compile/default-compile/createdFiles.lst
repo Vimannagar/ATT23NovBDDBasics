@@ -1,0 +1,4 @@
+qa/DriverFactory.class
+qa/DriverFactory2.class
+pages/HomePage.class
+pages/SearchPage.class

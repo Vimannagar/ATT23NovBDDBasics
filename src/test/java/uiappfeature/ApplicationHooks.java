@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import qa.DriverFactory;
+import qa.DriverFactory2;
 import utility.PropReader;
 
 public class ApplicationHooks {
@@ -19,7 +19,7 @@ public class ApplicationHooks {
 	@Before
 	public void launchBrowser() throws IOException
 	{
-		DriverFactory df = new DriverFactory();
+		DriverFactory2 df = new DriverFactory2();
 		
 		 String browserName = PropReader.readPropData("browser");
 		 

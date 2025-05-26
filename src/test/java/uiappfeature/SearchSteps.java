@@ -5,11 +5,11 @@ import org.testng.Assert;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.SearchPage;
-import qa.DriverFactory;
+import qa.DriverFactory2;
 
 public class SearchSteps {
 	
-	SearchPage search = new SearchPage(DriverFactory.getDriver());
+	SearchPage search = new SearchPage(DriverFactory2.getDriver());
 	
 	@When("user searches for {string} in text box")
 	public void user_searches_for_in_text_box(String string) {
