@@ -105,6 +105,11 @@ pipeline {
 
 }
 
+stage('Making the infra down') {
+            steps {
+                bat "docker-compose down"
+            }
+
 }
 
 }
