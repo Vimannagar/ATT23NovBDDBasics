@@ -1,0 +1,28 @@
+AWS Commands:
+*****************************************************installing docker*****************************************
+https://docs.docker.com/engine/install/ubuntu/
+To install docker :
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+*****************************************************Necessary Operations**************************************
+Commands to execute on instance to make it ready for execution:
+For installing docker the above image commands are sufficient but we also have to execute the following:
+sudo curl -SL https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
+
+sudo chmod +x /usr/bin/docker-compose
+sudo usermod -aG docker $USER
+**************************************************Installing Java*******************************************
+sudo apt install openjdk-17-jre-headless
+
+
+**************************************************Installing Jenkins*******************************************
+https://pkg.jenkins.io/
+https://pkg.jenkins.io/debian-stable/
+sudo usermod -aG docker Jenkins
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+sudo systemctl status jenkins
+**************************************************Installing maven*******************************************
+sudo apt install maven
+To get the pin :
+Sudo cat <path provided to access the pin>
